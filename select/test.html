@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Select Component</title>
+    <link rel="stylesheet" href="./select.css">
+    <script src="./select.js"></script>
+  </head>
+  <body>
+    <div id="message"></div>
+    <div id="page">
+      <div style="display: flex; flex-direction: row">
+        <div>少量测试： </div>
+        <div id="select1"></div>
+        <div>单选测试(10w)： </div>
+        <div id="select2"></div>
+        <div>多选测试(10w)</div>
+        <div id="select3"></div>
+      </div>
+      <div style="position: absolute; top: 700px; left: 400px">
+        <button onclick="getValue()"><span>获取三个输入框的值</span></button>
+        <button onclick="loadRemoteDatas()"><span>异步加载远程数据</span></button>
+        <button onclick="appendDatas()"><span>给前两个追加数据</span></button>
+      </div>
+    </div>
+
+    </div>
+    <script>
+      var messageDom = document.getElementById('message')
+      var initData = [
+      {
+          value: 1,
+          description: '北京'
+        },
+        {
+          value: 2,
+          description: '上海'
+        },
+        {
+          value: 3,
+          description: '北京二'
+        },
+        {
+          value: 4,
+          description: '上海二'
+        }
+      ]
+      var datas = [
+        {
+          value: 789,
+          description: '四川'
+        },
+        {
+          value: 790,
+          description: '重庆'
+        }
+      ]
+      var select1 = new Select({
+        el: '#select1',
+        size: 40,
+        filterStyle: {
+          color: 'red'
+        },
+        multiple: false
+      })
+      select1.loadDatas(initData)
+
+      var select2 = new Select({
+        el: '#select2',
+        size: 40,
+        multiple: false
+      })
+      select2.loadDatasAsync('http://localhost:30000/server/list')
+      
+      var select3 = new Select({
+        el: '#select3',
+        size: 40,
+        filterStyle: {
+          color: '#ffea4a'
+        },
+        multiple: true
+      })
+      select3.loadDatasAsync('http://localhost:30000/server/list')
+
+      function getValue() {
+        var div1 = '<div>' +'select-1-value: ' + JSON.stringify(select1.getValue()) + '</div>'
+        var div2 = '<div>' +'select-2-value: ' + JSON.stringify(select2.getValue()) + '</div>'
+        var div3 = '<div>' +'select-3-value: ' + JSON.stringify(select3.getValue()) + '</div>'
+        messageDom.innerHTML = div1 + div2 + div3
+      }
+
+      function appendDatas() {
+        select1.appendDatas(datas, function() {
+          messageDom.innerHTML+='【单选】加载成功!'
+        })
+        select2.appendDatas(datas, function() {
+          messageDom.innerHTML+='【多选】加载成功！'
+        })
+      }
+    </script>
+  </body>
+</html>

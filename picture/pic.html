@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      @keyframes rot1 {
+        0% {
+          transform: rotateY(0deg);
+        }
+        50% {
+          transform: rotateY(90deg);
+        }
+        100% {
+          transform: rotateY(0deg);
+        }
+      }
+      @keyframes rot2 {
+        0% {
+          transform: rotateY(0deg);
+        }
+        50% {
+          transform: rotateY(90deg);
+        }
+        100% {
+          transform: rotateY(0deg);
+        }
+      }
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      ul {
+        list-style-type: none;
+        display: flex;
+        width: 800px;
+        height: 640px;
+        flex-wrap: wrap;
+      }
+      .bg {
+        width: 100px;
+        height: 160px;
+      }
+      .ani1 {
+        animation: rot1 2s;
+      }
+      .ani2 {
+        animation: rot2 2s;
+      }
+      #back{
+        width: 800px;
+        height: 640px;
+        opacity: 0.5;
+        position: absolute;
+        top: 0;
+        z-index: -5;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="back"></div>
+    <div >
+      <ul id="pic"></ul>
+    </div>
+
+    <script>
+      window.onload = function() {
+        const pic = document.querySelector('#pic')
+        const back = document.querySelector('#back')
+        let current = ((Math.random() * 2 + 1) | 0)
+        pic.appendChild(createFragment(current))
+        pic.addEventListener('mouseenter', function(e) {
+          back.style.backgroundImage = 'url(./' + current + '.jpg)'
+          current = current === 1 ? 2 : 1
+          replaceBackground(current)
+        })
+
+      }
+
+
+      function replaceBackground(current) {
+        const nodes = pic.childNodes
+        for(let i = 0; i < nodes.length; i++) {
+            nodes[i].className = current === 1 ? 'bg ani1' : 'bg ani2'
+            ;(function(i) {
+              setTimeout(function() {
+                nodes[i].style.backgroundImage = 'url(./'+ current +'.jpg) '
+              }, 100 * i)
+            }(i))
+        }
+      }
+
+      function createFragment(current) {
+        const frag = document.createDocumentFragment();
+        for(let i = 0; i < 32; i++) {
+          let row = Math.floor(i / 8)
+          let col = i % 8
+          let li = document.createElement('li')
+          li.style.backgroundImage = 'url(./'+ current +'.jpg)'
+          li.style.backgroundPosition = '-'+ (col * 100)+'px'+' -'+ (row * 160) + 'px'
+          li.style.animationDelay = (0.1 * i)+'s'
+          li.classList.add('bg')
+          frag.appendChild(li)
+        }
+        return frag
+      }
+    </script>
+  </body>
+</html>

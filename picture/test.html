@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./pic.css">
+    <script src="./pic.js"></script>
+  </head>
+  <body>
+    <div id="pics"></div>
+
+    <script>
+     const pic = new Picture({
+       el: '#pics',
+       width: 800,
+       height: 640,
+       row: 8,
+       col: 8,
+       images: ['./1.jpg', './2.jpg', './3.jpg', './4.jpg', './5.jpg', './6.jpg', './7.jpg', './8.jpg'],
+       delay: 0.1
+     })
+     
+     pic.run()
+    </script>
+  </body>
+</html>

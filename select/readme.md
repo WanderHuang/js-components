@@ -1,4 +1,12 @@
 # select 组件 #
+## 需求 ##
+* 实现类似html的select元素的选择功能
+* 可以对数据进行搜索
+* 搜索匹配到的数据高亮
+* 支持多选
+* 支持同步加载、异步加载等多种数据加载方式
+* 考虑浏览器兼容、原生JavaScript实现
+* 支持大数据量的搜索、选择等(基本功能支持大数据量10w+)
 ## 简介 ##
 参考了[bootstrap-select](https://silviomoreto.github.io/bootstrap-select/)、[lzw.me/bootstrap-suggest-plugin](http://lzw.me/pages/demo/bootstrap-suggest-plugin/demo/).目前处于初级阶段，仅完成部分内容。  
 ### 实现功能 ###

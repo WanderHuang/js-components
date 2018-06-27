@@ -1,0 +1,127 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="SimpleGrid.css">
+    <script src="./SimpleGrid.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- demo -->
+    <div id="demo" class="sg-wrapper">
+        <table class="sg-header">
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>籍贯</th>
+                <th>收入</th>
+                <th>备注</th>
+            </tr>
+        </table>
+        <table class="sg-body">
+            <tr class="sg-body-row">
+                <td>hah</td>
+                <td>123</td>
+                <td>sichuan</td>
+                <td>456</td>
+                <td>heihe</td>
+            </tr>
+            <tr class="sg-body-row">
+                <td>hah</td>
+                <td>123</td>
+                <td>sichuan</td>
+                <td>456</td>
+                <td>heihe</td>
+            </tr>
+            <tr class="sg-body-row">
+                <td>hah</td>
+                <td>123</td>
+                <td>sichuan</td>
+                <td>456</td>
+                <td>heihe</td>
+            </tr>
+            <tr class="sg-body-row">
+                <td>hah</td>
+                <td>123</td>
+                <td>sichuan</td>
+                <td>456</td>
+                <td>heihe</td>
+            </tr>
+            <tr class="sg-body-row">
+                <td>hah</td>
+                <td>123</td>
+                <td>sichuan</td>
+                <td>456</td>
+                <td>heihe</td>
+            </tr>
+            <tr class="sg-body-row">
+                <td>hah</td>
+                <td>123</td>
+                <td>sichuan</td>
+                <td>456</td>
+                <td>heihe</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        var grid = new SimpleGrid({
+            el: '#demo',
+            color: '#000',
+            backgroundColor: '#fff',
+            cols: [
+                {name: 'hah', prop: 'prop1', width: '20'},
+                {name: 'hah2', prop: 'prop2', width: '20'},
+                {name: 'hah3', prop: 'prop3', width: '20'},
+                {name: 'hah4', prop: 'prop4', width: '20'},
+                {name: 'hah5', prop: 'prop5', width: '20'}
+            ]
+        })
+        grid.loadDatas([
+            {
+                prop1: '11111',
+                prop2: '22222',
+                prop3: '33333',
+                prop4: '44444',
+                prop5: '55555',
+            },
+            {
+                prop1: '11111',
+                prop2: '22222',
+                prop3: '33333',
+                prop4: '44444',
+                prop5: '55555',
+            },
+            {
+                prop1: '11111',
+                prop2: '22222',
+                prop3: '33333',
+                prop4: '44444',
+                prop5: '55555',
+            },
+            {
+                prop1: '11111',
+                prop2: '22222',
+                prop3: '33333',
+                prop4: '44444',
+                prop5: '55555',
+            },
+            {
+                prop1: '11111',
+                prop2: '22222',
+                prop3: '33333',
+                prop4: '44444',
+                prop5: '55555',
+            },
+            {
+                prop1: '11111',
+                prop2: '22222',
+                prop3: '33333',
+                prop4: '44444',
+                prop5: '55555',
+            }
+        ])
+    </script>
+</body>
+</html>

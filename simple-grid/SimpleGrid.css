@@ -1,0 +1,21 @@
+.sg-wrapper {
+    background-color: lightcyan;
+    counter-reset: count;
+}
+.sg-header{
+    width: 100%;
+}
+.sg-body{
+    width: 100%;
+}
+.sg-body tr:hover {
+    background-color: #f3e7e7
+}
+
+th, td{
+    border: 1px solid black;
+}
+
+th {
+    background-color: antiquewhite;
+}

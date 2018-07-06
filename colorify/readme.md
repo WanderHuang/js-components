@@ -26,6 +26,16 @@ Colorify
   .show()
 ```
 
+
+
+# 参考文章
+
+- [AlloyTeam从console说起](http://www.alloyteam.com/2013/11/console-log/)
+
+- [stackoverflow:ansi-color-escape-sequences](https://stackoverflow.com/questions/4842424/list-of-ansi-color-escape-sequences)
+
+- [tip_colors_and_formatting](https://misc.flogisoft.com/bash/tip_colors_and_formatting)
+
 # 演示效果
 
 !\[image\](https://github.com/WanderHuang/js-components/blob/master/docs/colorify_demo.gif)

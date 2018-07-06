@@ -38,7 +38,7 @@ Colorify
 
 # 演示效果
 
-!\[image\](https://github.com/WanderHuang/js-components/blob/master/docs/colorify_demo.gif)
+![image](https://github.com/WanderHuang/js-components/blob/master/docs/colorify_demo.gif)
 
 # TODO
 

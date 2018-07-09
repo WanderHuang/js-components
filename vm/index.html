@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./binding.js"></script>
+</head>
+<body>
+    <div id="test" style="outline: 1px solid rgb(145, 224, 214); margin: 20px 0">
+        <button @click="randomTitle">randomTitle</button>
+        <button @click="randomBody">randomBody</button>
+        <button @click="randomFoot">randomFoot</button>
+        <h1>{{title}}</h1>
+        <div>{{body}}</div>
+        <footer>{{foot}}</footer>
+    </div>
+    <div style="outline: 1px solid black; margin: 20px 0">
+        <button id="outer">outerRandomAll</button>
+    </div>
+    <script>
+        var app = new Binding({
+            el: '#test',
+            datas: {
+                title: 'title',
+                body: 'body',
+                foot: 'foot'
+            },
+            methods: {
+                randomTitle: function(e) {
+                    this.title = 'Im title - ' + ((Math.random() * 1000) | 0)
+                },
+                randomBody: function(e) {
+                    this.body = 'Im body - ' + ((Math.random() * 1000) | 0)
+                },
+                randomFoot: function(e) {
+                    this.foot = 'Im foot - ' + ((Math.random() * 1000) | 0)
+                }
+            },
+            mounted: function () {
+                console.log(this.msg)
+            }
+        })
+
+        document.getElementById('outer').addEventListener('click', function(e) {
+            app.title = 'Im title - ' + ((Math.random() * 1000) | 0)
+            app.body = 'Im body - ' + ((Math.random() * 1000) | 0)
+            app.foot = 'Im foot - ' + ((Math.random() * 1000) | 0)
+        })
+
+    </script>
+</body>
+</html>

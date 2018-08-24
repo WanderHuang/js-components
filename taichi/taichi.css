@@ -1,0 +1,67 @@
+@keyframes clockwise {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes anticlockwise {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(-360deg)
+  }
+}
+
+.taichi {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  background-image: linear-gradient(to right, transparent 50%, #000 0);
+}
+.taichi>div {
+  position: absolute;
+  left: 25%;
+  width: calc(50% - 2px);
+  height: calc(50% - 2px);
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background: #fff;
+}
+.taichi>div::after {
+  content: '';
+  position: absolute;
+  left: calc(50% - 5px);
+  top: calc(50% - 5px);
+  width: 8px;
+  height: 8px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  background: #000;
+}
+.taichi>div:nth-child(2) {
+  position: absolute;
+  left: 25%;
+  top: 50%;
+  width: calc(50% - 2px);
+  height: calc(50% - 2px);
+  border: 1px solid #000;
+  border-radius: 50%;
+  background: #000;
+}
+.taichi>div:nth-child(2)::after {
+  content: '';
+  position: absolute;
+  left: calc(50% - 5px);
+  top: calc(50% - 5px);
+  width: 8px;
+  height: 8px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background: #fff;
+}

@@ -15,3 +15,9 @@
 一个Vue和Node通用的控制台色彩日志器
 
 [欢迎访问](https://github.com/WanderHuang/js-components/tree/master/colorify/readme.md)
+
+## taichi
+
+一个太极图像生成器 手打css动效感人
+
+[欢迎访问](https://github.com/WanderHuang/js-components/tree/master/taichi/readme.md)

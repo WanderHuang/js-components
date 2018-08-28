@@ -1,0 +1,65 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./lib/rough.min.js"></script>
+  <script src="rough.bg.js"></script>
+  <style>
+  </style>
+</head>
+
+<body>
+  <!-- mask 遮罩需要向下传递事件-->
+  <div style="width: 1500px; height: 1500px;position: absolute; z-index: 9999; background: transparent;top: 0;left: 0;pointer-events: none"></div>
+  <div style="width: 1200px; height: 600px; margin: 20px 20px;position: absolute;left: 0;top: 0">
+    <div>
+      <h1>CANVAS 1</h1>
+      <canvas id="canv1" width="500px" height="500px" style="border: 1px solid red"></canvas>
+    </div>
+    <div>
+      <h1>CANVAS 2</h1>
+      <canvas id="canv2" width="500px" height="500px" style="border: 1px solid green"></canvas>
+    </div>
+  </div>
+  <div style="width: 1200px; height: 600px; margin: 20px 20px;position: absolute; left: 650px; top: 0">
+      <div>
+        <h1>CANVAS 3</h1>
+        <canvas id="canv3" width="500px" height="500px" style="border: 1px solid blue"></canvas>
+      </div>
+      <div>
+        <h1>CANVAS 4</h1>
+        <canvas id="canv4" width="500px" height="500px" style="border: 1px solid purple"></canvas>
+      </div>
+    </div>
+  <script>
+    // custom star
+    new RoughBg({
+      el: '#canv1',
+      rate: 2,
+      shape: 'star',
+      size: 20,
+      fill: '#777777'
+    })
+    // custom tria
+    new RoughBg({
+      el: '#canv2',
+      rate: 4,
+      shape: 'tria',
+      size: 30,
+      fill: '#999999'
+    })
+    //random
+    new RoughBg({
+      el: '#canv3'
+    })
+    //random
+    new RoughBg({
+      el: '#canv4'
+    })
+  </script>
+</body>
+
+</html>

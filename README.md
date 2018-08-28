@@ -21,3 +21,9 @@
 一个太极图像生成器 手打css动效感人
 
 [欢迎访问](https://github.com/WanderHuang/js-components/tree/master/taichi/readme.md)
+
+## background
+
+一个简易网站背景特效 使用roughjs
+
+[欢迎访问](https://github.com/WanderHuang/js-components/tree/master/background/readme.md)

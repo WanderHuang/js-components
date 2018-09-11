@@ -1,0 +1,130 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .pick-wrapper {
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      border: 1px solid #f1ededd0
+    }
+    .pick-wrapper input {
+      widtd: 100%;
+      height: 100%;
+      line-height: 30px;
+      padding: 0 15px;
+    }
+    .pick-date-wrapper {
+      width: 300px;
+      height: 300px;
+      position: absolute;
+      border: 1px solid #f1ededd0;
+      box-shadow: 0 0 5px 5px #e8e3e3; /*x y blur spread color*/
+      padding: 2px;
+      background: white;
+      z-index: 9999;
+    }
+    .pick-date-header {
+      position: relative;
+      height: 10px;
+      width: 100%;
+      background: inherit;
+    }
+    .pick-date-header::after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      transform: rotate(45deg);
+      border-left: 1px solid #f1ededd0;
+      border-top: 1px solid #f1ededd0;
+      left: 50px;
+      top: -7px;
+      background: inherit;
+    }
+    .pick-date-table {
+      width: 100%;
+      height: 100%;
+    }
+    .pick-date-table table {
+      width: 100%;
+      height: 100%;
+    }
+    .pre, .after {
+      color: lightgray;
+    }
+    .pick-date-table table tr {
+      text-align: center;
+    }
+    .pick-date-table table .pre span, .pick-date-table table .after span, .pick-date-table table .current span {
+      width: 24px;
+      height: 24px;
+      display: block;
+      margin: 0 auto;
+      line-height: 24px;
+      cursor: pointer;
+      border-radius: 0%;
+    }
+    .pick-date-table table .pre span:hover, .pick-date-table table .after span:hover, .pick-date-table table .current span:hover {
+      border-radius: 50%;
+      animation: radius_trans 1s;
+      animation-fill-mode: forwards;
+    }
+
+
+    @keyframes radius_trans {
+      to {
+        border-radius: 50%;
+        background: rgb(124, 158, 209);
+        color: white;
+      }
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <div id="picker">
+    <div class="pick-wrapper">
+      <input />
+    </div>
+    <div class="pick-date-wrapper">
+      <div class="pick-date-header"></div>
+      <div class="pick-date-table">
+        <table>
+          <tbody>
+            <tr><td><div><span>日</span></div></td><td><div><span>一</span></div></td><td><div><span>二</span></div></td><td><div><span>三</span></div></td><td><div><span>四</span></div></td><td><div><span>五</span></div></td><td><div><span>六</span></div></td></tr>
+            <tr><td class="pre"><div><span>31</span></div></td><td class="current"><div><span>01</span></div></td><td class="current"><div><span>02</span></div></td><td class="current"><div><span>03</span></div></td><td class="current"><div><span>04</span></div></td><td class="current"><div><span>05</span></div></td><td class="current"><div><span>06</span></div></td></tr>
+            <tr><td class="current"><div><span>07</span></div></td><td class="current"><div><span>08</span></div></td><td class="current"><div><span>09</span></div></td><td class="current"><div><span>10</span></div></td><td class="current"><div><span>11</span></div></td><td class="current"><div><span>12</span></div></td><td class="current"><div><span>13</span></div></td></tr>
+            <tr><td class="current"><div><span>14</span></div></td><td class="current"><div><span>15</span></div></td><td class="current"><div><span>16</span></div></td><td class="current"><div><span>17</span></div></td><td class="current"><div><span>18</span></div></td><td class="current"><div><span>19</span></div></td><td class="current"><div><span>20</span></div></td></tr>
+            <tr><td class="current"><div><span>21</span></div></td><td class="current"><div><span>22</span></div></td><td class="current"><div><span>23</span></div></td><td class="current"><div><span>24</span></div></td><td class="current"><div><span>25</span></div></td><td class="current"><div><span>26</span></div></td><td class="current"><div><span>27</span></div></td></tr>
+            <tr><td class="current"><div><span>28</span></div></td><td class="current"><div><span>29</span></div></td><td class="current"><div><span>30</span></div></td><td class="current"><div><span>31</span></div></td><td class="after"><div><span>01</span></div></td><td class="after"><div><span>02</span></div></td><td class="after"><div><span>03</span></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script>
+    let picker = document.querySelector('#picker')
+    let input = picker.querySelector('input')
+    let panel = picker.querySelector('.pick-date-wrapper')
+    panel.style.display = 'none'
+    input.addEventListener('focus', (e) => {
+      panel.style.display = 'block'
+    })
+    panel.addEventListener('click', e => {
+      if (e.target.tagName === 'SPAN') {
+        input.value = e.target.innerText
+      }
+      panel.style.display = 'none'
+      e.stopPropagation()
+      e.preventDefault()
+    })
+  </script>
+</body>
+</html>

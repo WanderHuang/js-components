@@ -27,3 +27,7 @@
 一个简易网站背景特效 使用roughjs
 
 [欢迎访问](https://github.com/WanderHuang/js-components/tree/master/background/readme.md)
+
+## rxjs-simulator
+一个模仿rx编程范式的库。核心在于观察者模式(订阅和取消)和迭代器模式(推送消息)
+[欢迎访问](https://github.com/WanderHuang/js-components/tree/master/rx/readme.md)

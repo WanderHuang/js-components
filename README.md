@@ -31,3 +31,9 @@
 ## rxjs-simulator
 一个模仿rx编程范式的库。核心在于观察者模式(订阅和取消)和迭代器模式(推送消息)
 [欢迎访问](https://github.com/WanderHuang/js-components/tree/master/rx/readme.md)
+
+## tabs
+
+一个简单仿制于`element-ui`的`tabs`组件(`vue`)。可以用于练习`vue`的`jsx`能力。
+
+[欢迎访问](https://github.com/WanderHuang/js-components/tree/master/tabs/readme.md)
